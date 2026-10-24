@@ -1,0 +1,24 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: auralis-vsd
+  ai:
+    mcp:
+      client:
+        # Connections are built by McpGateway, not by auto-configuration.
+        enabled: false
+vsd:
+  servers:
+    auralis:
+      url: http://localhost:8080
+      endpoint: /mcp
+    semiconductor:
+      url: http://localhost:8090
+      endpoint: /mcp
+  request-timeout: 15m
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

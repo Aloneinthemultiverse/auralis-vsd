@@ -1,0 +1,4 @@
+ui/node_modules/
+server/target/
+server/src/main/resources/static/
+logs/
