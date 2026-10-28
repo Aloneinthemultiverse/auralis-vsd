@@ -10,7 +10,7 @@ export function Output({ result }: { result: Result }) {
         if (/\b(FAIL|ERROR|%Error)\b/.test(l)) cls = 'bad'
         else if (/\b(PASS|ALL TESTS PASSED|SUFFICIENT|passed)\b/.test(l)) cls = 'good'
         else if (/%Warning|\bWARN/i.test(l)) cls = 'warn'
-        else if (/^\s*path:/.test(l)) cls = 'path'
+        else if (/^\s*path:/.test(l) || /^\s*•/.test(l)) cls = 'path'
         else if (/^\[\d+\]/.test(l)) cls = 'head'
         return <span key={i} className={cls}>{cls === 'path' ? terms(l) : l}{'\n'}</span>
       })}
