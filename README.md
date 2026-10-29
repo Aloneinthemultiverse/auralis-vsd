@@ -6,12 +6,12 @@ A separate application for chip design. It has no design logic of its own: it is
 | Server | URL | Gives VSD |
 |---|---|---|
 | Auralis core | `http://localhost:8080/mcp` | problems, research, RTL design loop (local or Kaggle GPU), knowledge search, 2-bit graph RAG |
-| Auralis semiconductor | `http://localhost:8090/mcp` | `rtl_lint` (Verilator), `rtl_simulate` (Icarus), `rtl_synthesize` (Yosys), `semiconductor_validate` |
+| Auralis semiconductor | `http://localhost:8091/mcp` | `rtl_lint` (Verilator), `rtl_simulate` (Icarus), `rtl_synthesize` (Yosys), `semiconductor_validate` |
 
 ```
 browser ── /api ──> VSD server :8095 (Java, Spring Boot 4.1, MCP Java SDK 2.0)
                        ├── MCP streamable HTTP ──> Auralis core :8080/mcp
-                       └── MCP streamable HTTP ──> semiconductor :8090/mcp
+                       └── MCP streamable HTTP ──> semiconductor :8091/mcp
 ```
 
 ## Views
@@ -30,7 +30,7 @@ Servers connect lazily and reconnect, so VSD runs even when one is down.
 ## Run
 
 ```bash
-# Auralis stack first (core :8080, semiconductor :8090): ../Auraelis/scripts/start-auralis.sh
+# Auralis stack first (core :8080, semiconductor :8091): ../Auraelis/scripts/start-auralis.sh
 scripts/start-vsd.sh          # builds the UI into the server and starts it on :8095
 ```
 

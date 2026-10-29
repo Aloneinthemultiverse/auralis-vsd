@@ -14,7 +14,7 @@ vsd:
       url: http://localhost:8080
       endpoint: /mcp
     semiconductor:
-      url: http://localhost:8090
+      url: http://localhost:8091
       endpoint: /mcp
   request-timeout: 15m
 management:
